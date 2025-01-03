@@ -1,7 +1,7 @@
 extends Node
 
 @onready var farmWindow = ""
-@onready var codeWindow = farmWindow.window()
+@onready var codeWindow = ""
 
 func _ready()->void:
 	pass

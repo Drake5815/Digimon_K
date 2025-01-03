@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8id55allkgdd"]
+
+[ext_resource type="Script" path="res://Code/OtherScripts/coded_ui.gd" id="1_7qlu3"]
+
+[node name="Tab_Window" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7qlu3")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+modulate = Color(0.231373, 0.239216, 0.407843, 1)
+layout_mode = 0
+offset_left = 790.0
+offset_top = 670.0
+offset_right = 1265.0
+offset_bottom = 705.0
+placeholder_text = "Text Here"
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(0.231373, 0.239216, 0.407843, 1)
+layout_mode = 0
+offset_left = 790.0
+offset_top = 60.0
+offset_right = 1265.0
+offset_bottom = 654.0
+
+[node name="Code_btn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 15.0
+offset_right = 848.0
+offset_bottom = 46.0
+text = "Code"
+
+[node name="Inventory_btn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 900.0
+offset_top = 15.0
+offset_right = 983.0
+offset_bottom = 46.0
+text = "Inventory"

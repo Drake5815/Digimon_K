@@ -1,0 +1,32 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="DigimonTournament_WorldStage"
+config/features=PackedStringArray("4.3", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://Code/Manager_Script/game_manager.gd"
+FarmManager="*res://Code/Manager_Script/farm_manager.gd"
+BattleManager="*res://Code/Manager_Script/battle_manager.gd"
+WorldManager="*res://Code/Manager_Script/world_manager.gd"
+HomeManager="*res://Code/Manager_Script/home_manager.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+
+[dotnet]
+
+project/assembly_name="DigimonTournament_WorldStage"

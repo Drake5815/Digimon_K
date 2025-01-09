@@ -10,10 +10,12 @@ script = ExtResource("1_o4bsi")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 
-[node name="Normal" type="Sprite2D" parent="."]
+[node name="sprite" type="Node2D" parent="."]
+
+[node name="Normal" type="Sprite2D" parent="sprite"]
 texture = ExtResource("1_audsb")
 
-[node name="Hover" type="Sprite2D" parent="."]
+[node name="Hover" type="Sprite2D" parent="sprite"]
 visible = false
 texture = ExtResource("2_gacw2")
 

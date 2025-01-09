@@ -7,7 +7,3 @@
 script = ExtResource("1_hibo8")
 
 [node name="Platform" parent="." instance=ExtResource("1_ei1da")]
-
-[node name="Platform2" parent="." instance=ExtResource("1_ei1da")]
-z_index = -1
-position = Vector2(210, -78)

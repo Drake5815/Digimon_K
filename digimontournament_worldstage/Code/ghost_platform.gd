@@ -1,8 +1,10 @@
 extends Node2D
 
 ## ONREADY FUNC
-@onready var Normal = $Normal
-@onready var hover = $Hover
+@onready var Normal = $sprite/Normal
+@onready var hover = $sprite/Hover
+
+@onready var sprite = $sprite
 
 func _ready() -> void:
 	hover.visible = false 

@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://djj2gyar8icmd"]
+
+[ext_resource type="Texture2D" uid="uid://3l4wplksr6gs" path="res://Assets/Images/Habitat_Upper.png" id="1_5vy4j"]
+[ext_resource type="Texture2D" uid="uid://0ksgxveteq2v" path="res://Assets/Images/Habitat_lower.png" id="2_ncb7n"]
+
+[node name="Platform" type="Node2D"]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Upper" type="Sprite2D" parent="."]
+z_index = -1
+scale = Vector2(6, 6)
+texture = ExtResource("1_5vy4j")
+
+[node name="Lower" type="Sprite2D" parent="."]
+z_index = 1
+scale = Vector2(6, 6)
+texture = ExtResource("2_ncb7n")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Upper" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-124, 3, -69, -51, 69, -51, 123, 3, 141, -13, 141, -21, 69, -93, -69, -93, -141, -21, -141, -14)
+
+[node name="Lower" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-141, -14, -69, 57, 69, 57, 141, -13, 141, 27, 69, 98, -69, 98, -141, 27)

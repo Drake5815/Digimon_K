@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddn4f108iskdi"]
+
+[ext_resource type="Texture2D" uid="uid://bo0y8c2n58prk" path="res://Assets/Images/Habitat_Ghost.png" id="1_audsb"]
+[ext_resource type="Script" path="res://Code/ghost_platform.gd" id="1_o4bsi"]
+[ext_resource type="Texture2D" uid="uid://py1q0aa6uc25" path="res://Assets/Images/Habitat_Hover.png" id="2_gacw2"]
+
+[node name="GhostPlatform" type="Node2D"]
+scale = Vector2(6, 6)
+script = ExtResource("1_o4bsi")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Normal" type="Sprite2D" parent="."]
+texture = ExtResource("1_audsb")
+
+[node name="Hover" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_gacw2")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-11.5, -15.5, 11.5, -15.5, 23.5, -3.5, 23.5, 4.5, 11.5, 16.5, -11.5, 16.5, -23.6667, 4.33333, -23.6667, -3.33333)

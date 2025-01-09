@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://dy2k5seisacqh"]
+[gd_scene load_steps=3 format=3 uid="uid://dy2k5seisacqh"]
 
 [ext_resource type="PackedScene" uid="uid://djj2gyar8icmd" path="res://tscn/Home/platform.tscn" id="1_ei1da"]
+[ext_resource type="Script" path="res://Code/Manager_Script/home_manager.gd" id="1_hibo8"]
 
 [node name="Home" type="Node2D"]
+script = ExtResource("1_hibo8")
 
 [node name="Platform" parent="." instance=ExtResource("1_ei1da")]
-position = Vector2(650, 348)
+
+[node name="Platform2" parent="." instance=ExtResource("1_ei1da")]
+z_index = -1
+position = Vector2(210, -78)

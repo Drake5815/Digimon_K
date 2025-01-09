@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://djj2gyar8icmd"]
+[gd_scene load_steps=4 format=3 uid="uid://djj2gyar8icmd"]
 
 [ext_resource type="Texture2D" uid="uid://3l4wplksr6gs" path="res://Assets/Images/Habitat_Upper.png" id="1_5vy4j"]
+[ext_resource type="Script" path="res://Code/Platform.gd" id="1_a6qk6"]
 [ext_resource type="Texture2D" uid="uid://0ksgxveteq2v" path="res://Assets/Images/Habitat_lower.png" id="2_ncb7n"]
 
 [node name="Platform" type="Node2D"]
+script = ExtResource("1_a6qk6")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 

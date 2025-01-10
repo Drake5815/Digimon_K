@@ -6,4 +6,8 @@
 [node name="Home" type="Node2D"]
 script = ExtResource("1_hibo8")
 
+[node name="Platform2" parent="." instance=ExtResource("1_ei1da")]
+position = Vector2(827, 268)
+
 [node name="Platform" parent="." instance=ExtResource("1_ei1da")]
+position = Vector2(617, 346)

@@ -10,14 +10,21 @@ script = ExtResource("1_a6qk6")
 [node name="Marker2D" type="Marker2D" parent="."]
 
 [node name="Upper" type="Sprite2D" parent="."]
-z_index = -1
+z_index = 2
 scale = Vector2(6, 6)
 texture = ExtResource("1_5vy4j")
 
 [node name="Lower" type="Sprite2D" parent="."]
-z_index = 1
+z_index = -2
 scale = Vector2(6, 6)
 texture = ExtResource("2_ncb7n")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 16
+
+[node name="Base" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-123, 4, -69, -51, 68, -51, 123, 3, 69, 57, -69, 57)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -26,3 +33,23 @@ polygon = PackedVector2Array(-124, 3, -69, -51, 69, -51, 123, 3, 141, -13, 141, 
 
 [node name="Lower" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(-141, -14, -69, 57, 69, 57, 141, -13, 141, 27, 69, 98, -69, 98, -141, 27)
+
+[node name="RDown" type="RayCast2D" parent="."]
+target_position = Vector2(210, 78)
+collision_mask = 16
+collide_with_areas = true
+
+[node name="RUp" type="RayCast2D" parent="."]
+target_position = Vector2(210, -78)
+collision_mask = 16
+collide_with_areas = true
+
+[node name="LDown" type="RayCast2D" parent="."]
+target_position = Vector2(-210, 78)
+collision_mask = 16
+collide_with_areas = true
+
+[node name="LUp" type="RayCast2D" parent="."]
+target_position = Vector2(-210, -78)
+collision_mask = 16
+collide_with_areas = true

@@ -1,14 +1,8 @@
 class_name Platform
 extends Node2D
 
-## Path
-var path_RUp:bool = false
-var path_LUp:bool = false
-var path_RDown:bool = false
-var path_LDown:bool = false
 ## Array
-var path = []
-var internal_path = {}
+var other_platform = {path_RUp=false,path_RDown=false,path_LUp=false,path_LDown=false}
 ## Raycasts
 @onready var R_Up = $RUp
 @onready var R_Down = $RDown
@@ -16,7 +10,7 @@ var internal_path = {}
 @onready var L_Down = $LDown
 
 func _init() -> void:
-	print(self)
+	update_plaform()
 
 func _ready() -> void:
 	pass
@@ -25,21 +19,18 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("enter"):
 		update_plaform()
 
-func _set():
-	
-
 func update_plaform()->void:
 	if R_Up.is_colliding():
-		_nodePath(path_RUp)
+		_nodePath("path_RUp", true)
 	if R_Down.is_colliding():
-		_nodePath(path_RDown)
+		_nodePath("path_RDown", true)
 	if L_Up.is_colliding():
-		_nodePath(path_LUp)
+		_nodePath("path_LUp", true)
 	if L_Down.is_colliding():
-		_nodePath(path_LDown)
+		_nodePath("path_LDown", true)
 
-func _nodePath(node:bool)->void:	
-	node = true 
+func _nodePath(path:String, value:bool)->void:
+	other_platform[path] = value
 
 func _to_string() -> String:
 	return "Platform"

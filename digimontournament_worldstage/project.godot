@@ -17,10 +17,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameManager="*res://Code/Manager_Script/game_manager.gd"
-FarmManager="*res://Code/Manager_Script/farm_manager.gd"
-BattleManager="*res://Code/Manager_Script/battle_manager.gd"
-WorldManager="*res://Code/Manager_Script/world_manager.gd"
-HomeManager="*res://Code/Manager_Script/home_manager.gd"
 
 [display]
 

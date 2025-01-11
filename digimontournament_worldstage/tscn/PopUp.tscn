@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://ca6507w5o1bpw"]
+
+[ext_resource type="Script" path="res://tscn/pop_up.gd" id="1_qcpty"]
+
+[node name="PopUp" type="Popup"]
+initial_position = 1
+size = Vector2i(150, 106)
+visible = true
+script = ExtResource("1_qcpty")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 50.0
+offset_right = 150.0
+offset_bottom = 23.0
+text = "Warning:"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 30.0
+offset_top = 35.0
+offset_right = 180.0
+offset_bottom = 58.0
+text = "Max Platform"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 60.0
+offset_top = 75.0
+offset_right = 108.0
+offset_bottom = 106.0
+text = "close"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

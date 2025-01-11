@@ -1,4 +1,3 @@
-class_name Platform
 extends Node2D
 
 ## Array
@@ -9,17 +8,10 @@ var other_platform = {path_RUp=false,path_RDown=false,path_LUp=false,path_LDown=
 @onready var L_Up = $LUp
 @onready var L_Down = $LDown
 
-func _init() -> void:
-	update_plaform()
-
 func _ready() -> void:
-	pass
+	self.name = "Platform"
 
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("enter"):
-		update_plaform()
-
-func update_plaform()->void:
+func update_platform()->void:
 	if R_Up.is_colliding():
 		_nodePath("path_RUp", true)
 	if R_Down.is_colliding():
@@ -31,6 +23,3 @@ func update_plaform()->void:
 
 func _nodePath(path:String, value:bool)->void:
 	other_platform[path] = value
-
-func _to_string() -> String:
-	return "Platform"

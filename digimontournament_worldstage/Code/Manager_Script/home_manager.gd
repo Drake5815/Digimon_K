@@ -4,17 +4,16 @@ extends Node
 ## ONREADY VARIABLES
 @onready var platform = preload("res://tscn/Home/platform.tscn")
 @onready var GhostPlatform = preload("res://tscn/Home/GhostPlatform.tscn")
+@onready var popUp = preload("res://tscn/PopUp.tscn")
 
-@onready var Base = $"."
+@onready var Base:Node2D = $"."
 
 ## VARIABLES
-#POSITION
-var posRUp:Vector2 = Vector2(210,-78)
-var posRDown:Vector2 = Vector2(210,78)
-var posLUp:Vector2 = Vector2(-210,-78)
-var posLDown:Vector2 = Vector2(-210,78)
 #ARRAY
 var arrPlatform:Array = []
+
+#MAX_SIZE
+var size = 5
 
 ## FUNCTIONS
 #ready
@@ -23,11 +22,13 @@ func _ready() -> void:
 		if child.name.begins_with("Platform"):
 			arrPlatform.append(child)
 
-## LIST
-#ADD
-func createPlatform()->void:
-	pass
+## POP-UP
+func pop()->void:
+	var init_pop = popUp.instantiate()
+	#init_pop.global_position = Vector2(640, 360)
+	self.add_child(init_pop)
 
+## BUILD
 func createGhostPlatforms(platform, pos)->void:
 	var GPlatform = GhostPlatform.instantiate()
 	GPlatform.global_position = pos
@@ -36,15 +37,41 @@ func createGhostPlatforms(platform, pos)->void:
 #BUILD
 func _BuildMode()->void:
 	for plt in arrPlatform:
-		for path in plt.raycast:
-			print(plt, path)
+		plt.update_platform()
+		for path in plt.other_platform.keys():
+			if !plt.other_platform[path]:
+				match path:
+					"path_RUp":
+						_createGhost(Vector2(210,-78),plt)
+					"path_RDown":
+						_createGhost(Vector2(210,78),plt)
+					"path_LUp":
+						_createGhost(Vector2(-210,-78),plt)
+					"path_LDown":
+						_createGhost(Vector2(-210,78),plt)
 
-func Build()->void:
-	pass
+func _createGhost(vec:Vector2,platform):
+	var inst_GPlatform = GhostPlatform.instantiate()
+	inst_GPlatform.global_position = vec
+	platform.add_child(inst_GPlatform)
+
+func _Build(vec:Vector2)->void:
+	var inst_platform = platform.instantiate()
+	inst_platform.global_position = vec
+	Base.add_child(inst_platform)
+	
+	arrPlatform.append(inst_platform)
+	
+	for plt in arrPlatform:
+		for child in plt.get_children():
+			if child.name.begins_with("Ghost_Platform"):
+				child.queue_free()
 
 #process
 func _process(delta: float) -> void:
-	
-		#place holder
-		if Input.is_action_just_pressed("enter"):
+	#Constant check of size of array
+	if Input.is_action_just_pressed("enter"):
+		if arrPlatform.size() < 5:
 			_BuildMode()
+		else:
+			pop()

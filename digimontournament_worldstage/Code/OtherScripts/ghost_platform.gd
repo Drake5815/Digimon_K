@@ -13,7 +13,7 @@ class_name Ghost_Platform
 
 func _ready() -> void:
 	self.name = "Ghost_Platform"
-	print("parent:",self.get_parent())
+	#print("parent:",self.get_parent())
 	hover.visible = false 
 	Normal.visible = true
 
@@ -22,7 +22,8 @@ func _on_area_2d_mouse_entered() -> void:
 	Normal.visible = false
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	print("area:",area.get_parent())
+	#print("area:",area.get_parent())
+	pass
 
 func _on_area_2d_mouse_exited() -> void:
 	hover.visible = false

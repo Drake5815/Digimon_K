@@ -1,10 +1,9 @@
 extends Node
 
-@onready var farmWindow = ""
-@onready var codeWindow = "res://tscn/Farm/coded_ui.tscn"
+@onready var window = $Window
 
 func _ready()->void:
-	pass
+	window.position = Vector2(425,210)
 
 func _process(delta: float) -> void:
 	pass

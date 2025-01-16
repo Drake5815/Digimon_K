@@ -8,6 +8,8 @@ var other_platform = {path_RUp=false,path_RDown=false,path_LUp=false,path_LDown=
 @onready var L_Up = $LUp
 @onready var L_Down = $LDown
 
+@onready var BottomPlatform = $"Bottom Platform"
+
 func _ready() -> void:
 	self.name = "Platform"
 
@@ -20,6 +22,10 @@ func update_platform()->void:
 		_nodePath("path_LUp", true)
 	if L_Down.is_colliding():
 		_nodePath("path_LDown", true)
+	if BottomPlatform.is_colliding():
+		print("True")
+		_nodePath("path_LDown", true)
+		_nodePath("path_RDown", true)
 
 func _nodePath(path:String, value:bool)->void:
 	other_platform[path] = value

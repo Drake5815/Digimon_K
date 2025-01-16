@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cnbcpd0fysp8"]
 
 [ext_resource type="Texture2D" uid="uid://bo0y8c2n58prk" path="res://Assets/Images/Habitat_Ghost.png" id="1_audsb"]
-[ext_resource type="Script" path="res://Code/ghost_platform.gd" id="1_o4bsi"]
+[ext_resource type="Script" path="res://Code/OtherScripts/ghost_platform.gd" id="1_o4bsi"]
 [ext_resource type="Texture2D" uid="uid://py1q0aa6uc25" path="res://Assets/Images/Habitat_Hover.png" id="2_gacw2"]
 
 [node name="GhostPlatform" type="Node2D"]

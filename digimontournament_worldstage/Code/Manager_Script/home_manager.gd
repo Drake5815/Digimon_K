@@ -25,7 +25,6 @@ func _ready() -> void:
 ## POP-UP
 func pop()->void:
 	var init_pop = popUp.instantiate()
-	#init_pop.global_position = Vector2(640, 360)
 	self.add_child(init_pop)
 
 ## BUILD
@@ -49,6 +48,9 @@ func _BuildMode()->void:
 						_createGhost(Vector2(-210,-78),plt)
 					"path_LDown":
 						_createGhost(Vector2(-210,78),plt)
+	
+	print(arrPlatform.size())
+	
 
 func _createGhost(vec:Vector2,platform):
 	var inst_GPlatform = GhostPlatform.instantiate()

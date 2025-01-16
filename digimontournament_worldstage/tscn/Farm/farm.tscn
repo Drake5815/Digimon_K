@@ -1,6 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://rlni07dt57di"]
+[gd_scene load_steps=2 format=3 uid="uid://dsqmws5upnba0"]
 
 [ext_resource type="Script" path="res://Code/Manager_Script/farm_manager.gd" id="1_gw0en"]
 
-[node name="Farm" type="Node2D"]
+[node name="Farm" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_gw0en")
+
+[node name="Window" type="Window" parent="."]
+position = Vector2i(0, 35)
+size = Vector2i(430, 300)
+unresizable = true
